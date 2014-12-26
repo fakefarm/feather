@@ -1,0 +1,30 @@
+.hero {
+  @include row();
+  border-bottom: 1px solid $light-gray;
+  .image, .copy {
+    @include span-columns(6);
+  }
+
+  .image {
+    img { width: 100%;}
+  }
+  .copy {
+    h1 {
+      text-align: center;
+      margin-top: 5em;
+      font-size: 2em;
+      margin-bottom: 2em;
+    }
+    .sales {
+      @include row();
+      img {
+        @include span-columns(3);
+       }
+      h2 {
+        font-size: 1.5em;
+        color: $dark-gray;
+        font-weight: 100;
+      }
+    }
+  }
+}

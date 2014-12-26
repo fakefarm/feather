@@ -1,0 +1,38 @@
+footer.footer
+  .footer-logo
+  .footer-links
+    ul
+      li
+        h3 Dave Woodall
+      li= link_to 'about', '/blog/about'
+    ul
+      li
+        h3 Pages
+      = render_partial 'shared/nav_links'
+    ul
+      li
+        h3 Social
+      li= link_to 'http://www.github.com/woodall', target: '_blank' do
+        .fa.fa-github
+        '
+        span github
+      li= link_to 'http://www.dribbble.com/wwwoodall', target: '_blank' do
+        .fa.fa-dribbble
+        '
+        span dribbble
+      li= link_to 'http://www.twitter.com/wwwoodall', target: '_blank' do
+        .fa.fa-twitter
+        '
+        span twitter
+      li= link_to 'http://www.linkedIn.com/in/davewoodall', target: '_blank' do
+        .fa.fa-linkedin
+        '
+        span linkedIn
+
+  hr/
+  p
+    ' Built by Dave with
+    = link_to 'middleman', 'http://www.middlemanapp.com', target: '_blank'
+    '  & thoughtbot's
+    = link_to 'front-end', 'http://thoughtbot.com/open-source', target: '_blank'
+    '  goodies.
