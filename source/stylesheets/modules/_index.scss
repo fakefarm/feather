@@ -61,19 +61,40 @@
 }
 
 .buy {
+  @include clearfix;
   border-top: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
   padding-top: 1em;
+  padding-bottom: 1em;
   margin-bottom: 2em;
+  .price {
+    font-size: 2em;
+    @include media($medium-screen) {
+      font-size: 4em;
+      @include span-columns(4);
+    }
+  }
   button {
-    width: 80%;
+    @include span-columns(12);
     margin: 0 2em;
     @include media($medium-screen) {
-      width: 40%;
+      @include span-columns(8);
       margin: 0;
     }
     a {
      color: white;
+     padding: 0.51em;
+     display: inline-block;
+     font-size: 2em;
     }
   }
 
 }
+
+.example {
+  @include media($medium-screen) {
+    padding-top: 1.5em;
+    @include span-columns(6);
+  }
+}
+
