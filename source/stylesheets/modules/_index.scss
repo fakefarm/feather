@@ -1,100 +1,29 @@
-.index {
+nav {
   @include row();
-  color: #255985;
-}
-.hero {
-  @include media($medium-screen) {
-    @include row();
-    border-bottom: 1px solid $light-gray;
-    .image, .copy {
-      @include span-columns(6);
-    }
-  }
-
-  .image {
-    img { width: 100%;}
-  }
-  .copy {
-    h1 {
-      text-align: center;
-      margin-top: 1em;
-      font-size: 2em;
-      margin-bottom: 2em;
-      @include media($medium-screen) {
-        margin-top: 5em;
-      }
-    }
-    .sales {
-      @include row();
-      img {
-        @include media($medium-screen) {
-          @include span-columns(5);
-        }
-       }
-      h2 {
-        font-size: 1.2em;
-        text-align: center;
-        @include media($medium-screen) {
-          font-size: 1.5em;
-          text-align: left;
-        }
-        font-weight: 100;
-      }
-    }
-  }
-}
-
-.about {
-  padding: 1em;
-  p {
-    color: $dark-gray;
-  }
-  h2 {
-    font-size: 2em;
-    text-align: center;
+  background: rgba(0,0,0,0.6);
+  .logo {
+    background: url("../../images/feather_box_logo_sm.svg") no-repeat;
+    padding: 1px;
+    width: 60px;
+    height: 60px;
     @include media($medium-screen) {
-      font-size: 2em;
-      text-align: left;
-    }
-    font-weight: 100;
-  }
-}
-
-.buy {
-  @include clearfix;
-  border-top: 1px solid $light-gray;
-  border-bottom: 1px solid $light-gray;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  margin-bottom: 2em;
-  .price {
-    font-size: 2em;
-    @include media($medium-screen) {
-      font-size: 4em;
-      @include span-columns(4);
+      @include span-columns(3);
     }
   }
-  button {
-    @include span-columns(12);
-    margin: 0 2em;
-    @include media($medium-screen) {
-      @include span-columns(8);
-      margin: 0;
-    }
+  .links {
     a {
-     color: white;
-     padding: 0.51em;
-     display: inline-block;
-     font-size: 2em;
+      display: block;
+      padding: 0.5em 1em;
+      border: 1px solid $white;
+      margin: 1em 0;
+      text-align: center;
+      @include media($medium-screen) {
+        margin: 1em;
+      }
+    }
+    @include media($medium-screen) {
+      li { display: inline-block;}
+      ul { text-align: right;}
     }
   }
-
 }
-
-.example {
-  @include media($medium-screen) {
-    padding-top: 1.5em;
-    @include span-columns(6);
-  }
-}
-
