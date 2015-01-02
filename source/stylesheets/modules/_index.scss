@@ -1,29 +1,85 @@
 nav {
   @include row();
-  background: rgba(0,0,0,0.6);
+  background: #7d7e7d; /* Old browsers */
+  background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+
+  @include media($medium-screen) {
+    background: none;
+  }
   .logo {
     background: url("../../images/feather_box_logo_sm.svg") no-repeat;
     padding: 1px;
     width: 60px;
     height: 60px;
+    margin: 0 auto;
     @include media($medium-screen) {
-      @include span-columns(3);
+      @include span-columns(6);
+      margin: 0;
     }
   }
   .links {
+    @include media($medium-screen) {
+      @include span-columns(6);
+      @include omega(2n);
+      li { display: inline-block;}
+      ul { text-align: right;}
+    }
     a {
       display: block;
+      color: white;
       padding: 0.5em 1em;
-      border: 1px solid $white;
-      margin: 1em 0;
+      border: 1px solid rgba(255,255,255,0.4);
+      margin: 1em 0.5em;
       text-align: center;
+      font-family: $sans-serif;
+      &:hover {
+        background: white;
+        color: black;
+      }
       @include media($medium-screen) {
         margin: 1em;
       }
     }
+    .buy a {
+      background: white;
+      color: black;
+      &:hover {
+        background: #aaa;
+        border: 1px solid #aaa;
+      }
+    }
+  }
+}
+
+.hero {
+  margin-bottom: 600px;
+  .image {
+    width: 100%;
+    z-index: -10;
+    position: absolute;
+    top: 308px;
     @include media($medium-screen) {
-      li { display: inline-block;}
-      ul { text-align: right;}
+      top: 0;
+    }
+    img { width: 100%; }
+  }
+  .headline {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 2em;
+    @include media($medium-screen) {
+      font-size: 3em;
+    }
+    .top {
+      font-family: $sans-serif;
+      font-weight: 100;
     }
   }
 }
