@@ -14,6 +14,7 @@ end
 activate :directory_indexes
 activate :livereload
 activate :syntax
+activate :relative_assets
 
 set :markdown_engine, :kramdown
 
@@ -25,7 +26,6 @@ configure :build do
   activate :minify_css
   activate :asset_hash
   activate :minify_javascript
-  activate :relative_assets
 end
 
 ignore   '/blog/drafts/*'
