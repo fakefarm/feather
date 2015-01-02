@@ -1,41 +1,52 @@
-.index
-  .hero
+nav
+  .logo
+  .links
+    ul
+      li= link_to 'WHAT'
+      li= link_to 'HOW'
+      li= link_to 'ABOUT'
+      li.buy= link_to 'BUY'
+
+section.hero
+  .image
+  .headline
+    .top Yes, a gift card makes her smile.
+    .bottom But a Feather will make her laugh
+section.tagline
+  .copy Send a feather when you're feeling for someone
+section.what
+  .col.details
     .image
-      = image_tag 'feather.jpg'
-    .copy
-      .tag
-        h1
-          | Don't just send a gift card.
-          br
-          | Send a feather.
-      .sales
-        = image_tag 'example.jpg'
-        h2
-          | A feather is the emotion of a gift
-          br
-          | with the freedom of cash.
-
-  .l-container
-    h2 Gifts vs. Gift Cards
-    .example
-      = image_tag 'box.jpg'
-    .about
-      / h2 How it started.
-      / p Different Christmas, Same story. Instead of going through the normal routines of buying gifts that Danae would return, Dave decided to try something different.
-      / p Christmas is about showing loved one's some love. And while cash is the easiest thing, it can also come across as the least caring.
-      / p So Dave thought about what he would buy if he knew what Danae liked and drew up 4 cards and wrapped those with cash.
-      / p The positive result was so strong that Dave wondered if other people might benefit of this hybrid approach.
-
-      p Gifts are more than transactions. They show another person that you care. Gift cards are a way of giving another person respect to give them something they will like.
-
-      p The one downside of a gift card is that it lacks an emotional experience. It's just money. But you have gone to the trouble to buy one but your thought and emotion don't show through like your heart.
-
-      p That's why people prefer gifts. Gifts represent an action toward another person on their behalf. People love the emotion a of anticpation when they see a gift but don't know what's inside. We want you to give that to the person as well. That is a feather. Unwrapping something and studying it.
-
-      p A feather is both a wrapped present of a limited edition art and a gift card. It shows that you are thinking of someone but want them to have something they love.
-
-    .buy
-      .price $8.95
-
-
-      button= link_to 'buy', 'https://gumroad.com/l/TTaI', target: '_blank'
+    .header People love unwrapping stuff.
+    .copy Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .col.zoom
+    .image
+section.how
+  .col.customer-part
+    .header How it works
+    .step.one
+      .image
+      .copy Find a Feather
+    .step.two
+      .image
+      .copy Choose a gift card
+    .step.three
+      .image
+      .copy Write a note
+  .col.feather-part
+    .image
+section.buy
+  .col.image
+  .col.action
+    .image
+    .header Find the perfect Feather
+    .button View All Feathers
+section.about
+  .col.logo
+  .col.details
+    .image
+    .header A Feather tickles the heart.
+    .copy Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+footer
+  .logo
+  .links
