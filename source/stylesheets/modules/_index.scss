@@ -98,10 +98,12 @@ nav {
 }
 
 .tagline {
+  position: relative;
   .copy {
     text-align: center;
     width: 100%;
     border-bottom: 1px solid $light-gray;
+    padding-bottom: 15px;
     @include media($medium-screen) {
       font-size: 3em;
       padding-bottom: 30px;
@@ -118,14 +120,13 @@ nav {
     }
     // _dw TODO move this header?
     .header {
-      font-family: $sans-serif;
       font-size: 1.25em;
       text-align: center;
       border-bottom: 1px solid $light-gray;
       padding-bottom: 0.25em;
       margin-bottom: 0.25em;
       @include media($medium-screen){
-        font-size: 1.75em;
+        font-size: 1.7em;
       }
     }
     .copy { // _dw TODO why does this need 100% width?
@@ -151,26 +152,90 @@ nav {
     img { width: 100%; }
   }
   .pitch {
-    font-size: 6em;
+    font-size: 2em;
+    @include media($medium-screen) {
+      font-size: 8em;
+    }
     font-weight: 100;
     color: white;
     font-family: $serif;
     text-align: center;
   }
-}
-
-.walk {
   .ribbon {
-    // border: 1px solid rgba(0,0,0,0.5);
     z-index: 100;
     position: absolute;
-    left: 3em;
-    top: 15em;
-    // padding: 0.25em;
+    left: 1.5em;
+    top: 3em;
+    @include media($medium-screen) {
+      left: 8em;
+      top: 10em;
+    }
   }
-  .pitch {
-    // background: rgba(0,0,0,0.75);
-    // padding: 1em 2em;
-    border-radius: 5px;
+
+  .computer {
+    top: 6em;
+    left: 15em;
+    background: rgba(255,255,255,0.7);
+    .pitch {
+      color: black;
+      font-size: 5em;
+      padding: 1em;
+    }
+  }
+}
+
+.how {
+  .step {
+    @include clearfix;
+    @include row;
+    .copy {
+      @include span-columns(5);
+      font-size: 2em;
+      text-align: center;
+      margin-top: 3em;
+      font-family: $sans-serif;
+    }
+    .caption {
+      font-size: 0.5em;
+      font-family: $sans-serif;
+      border-top: 1px solid $light-gray;
+      width: 60%;
+      margin: .25em auto 0;
+      padding: .25em 0 0;
+      font-family: $serif;
+    }
+    .image {
+      @include span-columns(5);
+    }
+    &.one .copy,
+    &.three .copy
+    { @include shift(1); }
+
+    &.two .image { @include shift(1); }
+    &.two .image { @include shift(1); }
+  }
+}
+
+.feather-part {
+  position: relative;
+  .tagline {
+    top: 190px;
+    .copy { border: none; }
+  }
+  .caption {
+    position: relative;
+    top: -220px;
+    font-size: 1.3em;
+    text-align: center;
+    font-style: italic;
+  }
+  .image {
+    position: relative;
+    top: -100px;
+    z-index: -10;
+    width: 100%;
+    img {
+      width: 100%;
+    }
   }
 }
