@@ -1,3 +1,4 @@
+body { color: $blue; }
 nav {
   @include row();
   background: #7d7e7d; /* Old browsers */
@@ -9,6 +10,7 @@ nav {
   background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 
+  padding: 1em;
   @include media($medium-screen) {
     background: none;
   }
@@ -25,8 +27,11 @@ nav {
   }
   .links {
     @include media($medium-screen) {
+      position: fixed;
+      top: 0px;
+      right: 0px;
       @include span-columns(6);
-      @include omega(2n);
+      // @include omega(2n);
       li { display: inline-block;}
       ul { text-align: right;}
     }
@@ -39,6 +44,7 @@ nav {
       text-align: center;
       font-family: $sans-serif;
       &:hover {
+        // _dw TODO - hover sucks.
         background: white;
         color: black;
       }
@@ -58,22 +64,29 @@ nav {
 }
 
 .hero {
-  margin-bottom: 600px;
+  margin-bottom: 100px;
+  @include media($medium-screen) {
+    margin-bottom: 215px;
+  }
   .image {
     width: 100%;
     z-index: -10;
     position: absolute;
-    top: 308px;
+    top: 338px;
+    overflow: hidden;
     @include media($medium-screen) {
+      height: 500px;
       top: 0;
     }
-    img { width: 100%; }
+    img {
+      width: 100%;
+    }
   }
   .headline {
     text-align: center;
     color: white;
     font-size: 1.2em;
-    margin-top: 2em;
+    margin-top: 1em;
     @include media($medium-screen) {
       font-size: 3em;
     }
@@ -81,5 +94,83 @@ nav {
       font-family: $sans-serif;
       font-weight: 100;
     }
+  }
+}
+
+.tagline {
+  .copy {
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid $light-gray;
+    @include media($medium-screen) {
+      font-size: 3em;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.what {
+  @include row;
+  .details {
+    @include media($medium-screen){
+      @include shift(1);
+      @include span-columns(4);
+    }
+    // _dw TODO move this header?
+    .header {
+      font-family: $sans-serif;
+      font-size: 1.25em;
+      text-align: center;
+      border-bottom: 1px solid $light-gray;
+      padding-bottom: 0.25em;
+      margin-bottom: 0.25em;
+      @include media($medium-screen){
+        font-size: 1.75em;
+      }
+    }
+    .copy { // _dw TODO why does this need 100% width?
+      width: 100%;
+      @include media($medium-screen){
+      }
+    }
+  }
+  .zoom {
+    border-top: 1px solid $light-gray;
+    margin-top: 1em;
+    @include media($medium-screen){
+      margin-top: 0;
+      border-top: none;
+      @include span-columns(7);
+    }
+  }
+}
+
+.ad {
+  position: relative;
+  .image {
+    img { width: 100%; }
+  }
+  .pitch {
+    font-size: 6em;
+    font-weight: 100;
+    color: white;
+    font-family: $serif;
+    text-align: center;
+  }
+}
+
+.walk {
+  .ribbon {
+    // border: 1px solid rgba(0,0,0,0.5);
+    z-index: 100;
+    position: absolute;
+    left: 3em;
+    top: 15em;
+    // padding: 0.25em;
+  }
+  .pitch {
+    // background: rgba(0,0,0,0.75);
+    // padding: 1em 2em;
+    border-radius: 5px;
   }
 }
