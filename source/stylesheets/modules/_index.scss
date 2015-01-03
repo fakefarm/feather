@@ -173,13 +173,20 @@ nav {
   }
 
   .computer {
-    top: 6em;
-    left: 15em;
+    top: 1em;
+    left: 1em;
+    @include media($medium-screen) {
+      top: 6em;
+      left: 15em;
+    }
     background: rgba(255,255,255,0.7);
     .pitch {
-      color: black;
-      font-size: 5em;
-      padding: 1em;
+      color: $blue;
+      padding: 0.25em;
+      @include media($medium-screen) {
+        font-size: 5em;
+        padding: 1em;
+      }
     }
   }
 }
@@ -189,11 +196,17 @@ nav {
     @include clearfix;
     @include row;
     .copy {
-      @include span-columns(5);
-      font-size: 2em;
       text-align: center;
-      margin-top: 3em;
       font-family: $sans-serif;
+      margin-top: 1em;
+      font-size: 1.2em;
+      @include span-columns(12);
+      @include media($medium-screen) {
+        @include span-columns(5);
+        margin-top: 3em;
+        font-size: 2em;
+
+      }
     }
     .caption {
       font-size: 0.5em;
@@ -206,36 +219,105 @@ nav {
     }
     .image {
       @include span-columns(5);
+      @include shift(3.5);
+      @include media($medium-screen) {
+        @include shift(0);
+      }
     }
     &.one .copy,
-    &.three .copy
-    { @include shift(1); }
+    &.three .copy {
+      @include media($medium-screen) {
+      @include shift(1);
+      }
+    }
 
-    &.two .image { @include shift(1); }
-    &.two .image { @include shift(1); }
+    &.two .image {
+      @include media($medium-screen) {
+        @include shift(1);
+        @include clearfix;
+      }
+    }
   }
 }
 
 .feather-part {
   position: relative;
   .tagline {
-    top: 190px;
     .copy { border: none; }
+    top: 20px;
+    @include media($medium-screen) {
+      .line:before {
+        content: '\A';
+        display: block;
+      }
+      top: 190px;
+    }
   }
   .caption {
     position: relative;
-    top: -220px;
-    font-size: 1.3em;
+    top: -115px;
+    font-size: 1.1em;
     text-align: center;
     font-style: italic;
+    @include media($medium-screen) {
+      font-size: 1.3em;
+      top: -200px;
+    }
   }
   .image {
     position: relative;
-    top: -100px;
+    top: -75px;
+    @include media($medium-screen) {
+      top: -100px;
+    }
     z-index: -10;
     width: 100%;
     img {
       width: 100%;
     }
+  }
+}
+
+.buy, .about {
+  @include row;
+  .image {
+    @include span-columns(4);
+  }
+  .action {
+    @include span-columns(8);
+    padding: 0 4em;
+    .product img {
+      display: block;
+      margin: 0 auto;
+    }
+    .header {
+      font-size: 2em;
+      text-align: center;
+    }
+    .copy {
+      border-top: 1px solid $light-gray;
+    }
+    .button {
+      button {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.buy { border-bottom: 1px solid $light-gray; }
+
+.about {
+  margin-top: 3em;
+  .image {
+    img {
+      border: 5px solid white;
+      box-shadow: 3px 3px 3px #eee;
+      @include transform(rotate(-3deg));
+    }
+  }
+  .sig {
+    width: 25%;
   }
 }
