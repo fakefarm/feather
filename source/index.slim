@@ -1,5 +1,4 @@
 nav
-  .logo
   .links
     ul
       li= link_to 'WHAT'
@@ -13,8 +12,9 @@ section.hero
   .headline
     .top.animated.fadeInDown A gift card will make them smile
     .bottom.animated2.fadeInUp A Feather will tickle their heart
+  .logo.animated3.rotateInDownLeft
 section.tagline
-  .copy Give the perfect gift. Give a Feather.
+  .copy A Feather is the Perfect Gift.
 section.what
   .col.details
     .image= image_tag 'tall_present.jpg'
@@ -59,9 +59,9 @@ section.ad
   .image= image_tag 'computer.jpg'
   .ribbon.computer
     .pitch
-      | A Feather is
+      | Send a Feather
       br
-      | for the one
+      | to the one
       br
       | who has everything.
 section.buy
@@ -75,7 +75,7 @@ section.about
   .col.action
     .header I started Feather for you.
     .copy
-      | I've been mailing doodles to friends and family for years. Some of my favorite moments are their responses after opening a quirky drawing. Last year my wife asked for some pretty obscure gifts for Christmas. Since I couldn't find those things I decided to skip the whole 'buying bad gifts' and wrap up a few doodles and gift cards instead.
+      | I've been mailing doodles to friends and family for years. Some of my favorite moments are their responses after opening a quirky drawing. Last year my wife asked for some pretty obscure Christmas gifts. Since I couldn't find those things I decided to skip the whole 'bad gift exchange' experience and wrap up a few doodles and gift cards instead.
       br
       | I know I'm not the only one who has trouble giving gifts so I started Feather to help you out.
       p Dave Woodall
@@ -93,3 +93,11 @@ section.ad
       | Send a Feather
       br
       | instead of guessing.
+
+nav
+  .links
+    ul
+      li= link_to 'WHAT'
+      li= link_to 'HOW'
+      li= link_to 'ABOUT'
+      li.buy= link_to 'BUY'

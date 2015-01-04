@@ -1,4 +1,16 @@
 body { color: $blue; }
+.logo {
+    background: url("../../images/feather_box_logo_sm.svg") no-repeat;
+    padding: 1px;
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+    @include media($medium-screen) {
+      margin: 0 auto;
+    }
+  }
+
 nav {
   @include row();
   background: #7d7e7d; /* Old browsers */
@@ -14,24 +26,12 @@ nav {
   @include media($medium-screen) {
     background: none;
   }
-  .logo {
-    background: url("../../images/feather_box_logo_sm.svg") no-repeat;
-    padding: 1px;
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
-    @include media($medium-screen) {
-      @include span-columns(6);
-      margin: 0;
-    }
-  }
   .links {
     @include media($medium-screen) {
       position: fixed;
       top: 0px;
       right: 0px;
       @include span-columns(6);
-      // @include omega(2n);
       li { display: inline-block;}
       ul { text-align: right;}
     }
@@ -64,7 +64,7 @@ nav {
 }
 
 .hero {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   @include media($medium-screen) {
     margin-bottom: 215px;
   }
@@ -72,7 +72,7 @@ nav {
     width: 100%;
     z-index: -10;
     position: absolute;
-    top: 338px;
+    top: 281px;
     overflow: hidden;
     @include media($medium-screen) {
       height: 500px;
@@ -171,6 +171,7 @@ nav {
       top: 10em;
     }
   }
+  .walk .ribbon { left: 5.5em; }
 
   .computer {
     top: 1em;
@@ -242,6 +243,12 @@ nav {
 
 .feather-part {
   position: relative;
+  margin-top: 20px;
+  height: 195px;
+  @include media($medium-screen) {
+    margin-top: 0;
+    height: 875px;
+  }
   .tagline {
     .copy { border: none; }
     top: 20px;
@@ -280,19 +287,30 @@ nav {
 
 .buy, .about {
   @include row;
+  padding-bottom: 1em;
+  @include media($medium-screen) {
+    padding-bottom: 0;
+  }
   .image {
-    @include span-columns(4);
+    @include media($medium-screen) {
+      @include span-columns(4);
+    }
   }
   .action {
-    @include span-columns(8);
-    padding: 0 4em;
+    @include media($medium-screen) {
+      @include span-columns(8);
+      padding: 0 4em;
+    }
     .product img {
       display: block;
       margin: 0 auto;
     }
     .header {
-      font-size: 2em;
       text-align: center;
+      font-size: 1.5em;
+      @include media($medium-screen) {
+        font-size: 2em;
+      }
     }
     .copy {
       border-top: 1px solid $light-gray;
@@ -312,6 +330,8 @@ nav {
   margin-top: 3em;
   .image {
     img {
+      width: 90%;
+      margin-left: 5%;
       border: 5px solid white;
       box-shadow: 3px 3px 3px #eee;
       @include transform(rotate(-3deg));
