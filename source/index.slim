@@ -1,10 +1,10 @@
 nav
   .links
     ul
-      li= link_to 'WHAT'
-      li= link_to 'HOW'
-      li= link_to 'ABOUT'
-      li.buy= link_to 'BUY'
+      li= link_to 'WHAT', '#what'
+      li= link_to 'HOW', '#how'
+      li= link_to 'ABOUT', '#about'
+      li.buy-btn= link_to 'BUY', 'https://feather-3.myshopify.com/', target: '_blank'
 
 section.hero
   .image
@@ -13,6 +13,7 @@ section.hero
     .top.animated.fadeInDown A gift card will make them smile
     .bottom.animated2.fadeInUp A Feather will tickle their heart
   .logo.animated3.rotateInDownLeft
+a.name-area name='what'
 section.tagline
   .copy A Feather is the Perfect Gift.
 section.what
@@ -29,6 +30,7 @@ section.ad.walk
       | Send a Feather
       br
       | to the one you love.
+a.name-area name='how'
 section.how
   .tagline
     .copy How to send a Feather
@@ -70,10 +72,12 @@ section.buy
     .product= image_tag 'example.jpg'
     .header Find the perfect Feather
     .button
-      button View All Feathers
+      button= link_to 'View All Feathers', 'https://feather-3.myshopify.com/'
+a.name-area name='about'
 section.about
+  .tagline
+    .copy I started Feather for you.
   .col.action
-    .header I started Feather for you.
     .copy
       | I've been mailing doodles to friends and family for years. Some of my favorite moments are their responses after opening a quirky drawing. Last year my wife asked for some pretty obscure Christmas gifts. Since I couldn't find those things I decided to skip the whole 'bad gift exchange' experience and wrap up a few doodles and gift cards instead.
       br
@@ -93,11 +97,3 @@ section.ad
       | Send a Feather
       br
       | instead of guessing.
-
-nav
-  .links
-    ul
-      li= link_to 'WHAT'
-      li= link_to 'HOW'
-      li= link_to 'ABOUT'
-      li.buy= link_to 'BUY'
